@@ -1,0 +1,31 @@
+{
+  "name": "wechat",
+  "version": "1.0.0",
+  "description": "a project to learn wechat open-platform development",
+  "main": "index.js",
+  "scripts": {
+    "test": "export NODE_ENV=dev;supervisor --harmony index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SunPeter/wechat.git"
+  },
+  "keywords": [
+    "wechat",
+    "node",
+    "koa"
+  ],
+  "author": "SunPeter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SunPeter/wechat/issues"
+  },
+  "homepage": "https://github.com/SunPeter/wechat",
+  "dependencies": {
+    "config": "^1.16.0",
+    "koa": "^1.1.0",
+    "koa-handlebars": "^0.5.7",
+    "koa-request": "^1.0.0",
+    "koa-router": "^5.2.3"
+  }
+}

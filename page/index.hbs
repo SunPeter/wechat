@@ -1,0 +1,38 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <meta name="apple-touch-fullscreen" content="no" />
+    <title>test</title>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+
+<body>
+    <h1>hello world</h1>
+    
+    <script>
+    wx.config({
+        debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        appId: '{{appid}}', // 必填，公众号的唯一标识
+        timestamp: {{timestamp}}, // 必填，生成签名的时间戳
+        nonceStr: '{{noncestr}}', // 必填，生成签名的随机串
+        signature: '{{signature}}', // 必填，签名，见附录1
+        jsApiList: ["onMenuShareTimeline","onMenuShareAppMessage","getNetworkType","getLocation","openLocation","chooseImage","hideOptionMenu"] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+    });
+    wx.ready(function() {
+        wx.getNetworkType({
+            success: function (res) {
+                var networkType = res.networkType; // 返回网络类型2g，3g，4g，wifi
+                alert(networkType)
+            }
+        });
+    });
+
+    </script>
+</body>
+
+</html>
